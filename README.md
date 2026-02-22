@@ -1,73 +1,200 @@
-# React + TypeScript + Vite
+# 🎬 React GIF Search Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌐 **Live Demo:** https://react-gifs-search-client.netlify.app/
 
-Currently, two official plugins are available:
+Production-ready frontend application built with React, Vite, and TypeScript, integrating the Giphy API to search and display GIFs dynamically.
+The project demonstrates clean architecture principles, custom hooks, API abstraction, unit testing, and scalable folder organization.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- GIF search powered by Giphy API
 
-## Expanding the ESLint configuration
+- API abstraction layer using Axios
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Custom React hooks for business logic encapsulation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Component-based architecture
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Search history persistence (previous searches component)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Unit testing with Vitest and Testing Library
+
+- Mocking external API calls with axios-mock-adapter
+
+- Coverage reporting with Vitest
+
+- Environment variable configuration with .env
+
+- Clean and scalable project structure
+
+
+---
+
+## 🛠 Tech Stack
+
+- React 19
+
+- TypeScript (strict mode)
+
+- Vite
+
+- Axios
+
+- Vitest
+
+- Testing Library
+
+- ESLint
+
+
+---
+
+## 📁 Project Structure
+
+```bash
+src/
+ ├── gifs/
+ │    ├── actions/            # Business logic actions (API calls abstraction)
+ │    ├── api/                # Axios configuration and external API integration
+ │    ├── components/         # Feature-specific components
+ │    ├── hooks/              # Custom React hooks (useGifs)
+ │    ├── interfaces/         # TypeScript interfaces and types
+ │
+ ├── shared/components/       # Reusable UI components
+ ├── mock-data/               # Mocked API responses
+ ├── main.tsx                 # Application entry point
+ ├── GifsApp.tsx              # Root component
+ └── index.css                # Global styles
+
+test/
+ ├── gifs/                    # Unit tests for GIF domain
+ ├── shared/components/       # Component tests
+ ├── mock-data/               # Mock data for testing
+ └── __snapshots__/           # Snapshot testing
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🌐 External API Integration
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+This project integrates with the Giphy API using environment variables.
+Create a .env file in the root directory:
+
+```bash
+VITE_GIPHY_API_KEY=your_api_key_here
 ```
+
+An .env.example file is included for reference.
+
+---
+
+## ⚙️ Installation
+
+### 1. Clone the repository:
+
+```bash
+git clone https://github.com/edwardcruzcruz/react-gif-search-client.git
+```
+
+### 2. Install dependencies:
+
+```bash
+npm install
+```
+
+### 3. Create a .env file with:
+
+```bash
+VITE_GIPHY_API_KEY=your_api_key_here
+```
+
+### 4. Run the development server:
+
+```bash
+npm run dev
+```
+
+---
+
+## 🧪 Running Tests
+
+### Run all tests:
+
+```bash
+npm run test
+```
+
+### Run all tests once:
+
+```bash
+npm run test:only
+```
+
+### Run the coverage test:
+
+```bash
+npm run coverage
+```
+
+---
+
+## 🧠 Design Decisions
+
+- ✅ Domain-based folder structure
+
+- ✅ Separation between API layer and UI components
+
+- ✅ Business logic encapsulated inside custom hooks
+
+- ✅ External API mocking for deterministic tests
+
+- ✅ Type-safe interfaces for API responses
+
+- ✅ Build process validates tests before production build
+
+- ✅ Test
+
+- ✅ Deployment on Netlify  
+
+
+### Build script:
+
+```bash
+npm run build
+```
+
+Executes:
+
+- Unit tests
+
+- Type checking
+
+- Production build
+
+
+---
+
+## 🔮 Future Improvements
+
+- Infinite scroll pagination
+
+- Loading skeleton components
+
+- CI/CD pipeline with GitHub Actions
+
+- Add a global React Error Boundary
+
+- Improve centralized API error handling
+
+- Enhance user-friendly error feedback (UI messages)
+
+
+---
+
+## 📌 Author
+
+**Edward Cruz**
+
+Full Stack Developer | React | Node.js | TypeScript | REST APIs
