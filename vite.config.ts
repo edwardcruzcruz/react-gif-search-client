@@ -16,4 +16,10 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
   },
+  css: {
+    modules: {
+      // converts hyphenated CSS classes to camelCase in JS/TS
+      localsConvention: 'camelCaseOnly',
+    },
+  },
 });
