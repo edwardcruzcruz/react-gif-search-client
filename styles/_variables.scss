@@ -1,0 +1,58 @@
+/*What the Numbers Mean
+The number represents the intensity of the color.
+Typical scale:
+Shade	Meaning
+50	Very very light
+100	Very light
+200	Light
+300	Soft
+400	Medium light
+500	Base / Default
+600	Slightly darker
+700	Dark
+800	Very dark
+900	Extremely dark
+*/
+
+/*1. Brand (Primary / Secondary)
+Used for:
+Buttons
+Links
+Important highlights*/
+$primary_100: #fff;
+$primary_700: #333;
+$primary_900: #000;
+
+/*2. Neutral
+Used for:
+Backgrounds
+Borders
+Text
+Layout
+*/
+$neutral_300: #ccc;
+$neutral_800: #242424;
+
+$border: 1px;
+$border-radius-sm: 5px;
+$border-radius-lg: 10px;
+
+/*https://nekocalc.com/px-to-rem-converter
+16px → 1rem (if base font-size is 16px, which is standard in browsers)
+*/
+$font-size-sm: 0.875rem;    // 14px
+$font-size-base: 1rem;      // 16px
+$font-size-lg: 2rem;        // 32px
+
+/*spacing between items inside the container*/
+$gap-base: 10px;
+$gap-md: 20px;
+$gap-lg: 30px;
+$gap-xl: 40px;
+
+/*screen widths*/
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+$bp-large: 1280px; 
+
+$transition: all 0.3s ease;

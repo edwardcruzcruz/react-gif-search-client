@@ -1,0 +1,35 @@
+@use './variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;700&display=swap');
+
+html,
+body {
+  background-color: $neutral_800;
+  color: $primary_100;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+h1 {
+  font-size: $font-size-lg;
+  font-weight: 700;
+  margin: 0;
+  font-style: normal;
+  text-align: center;
+}
+
+.montserrat-light {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.montserrat-regular {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montserrat-bold {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}

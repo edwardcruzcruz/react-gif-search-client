@@ -1,5 +1,5 @@
 import { useEffect, useState, type KeyboardEvent } from "react";
-
+import styles from './CustomSearch.module.scss';
 interface Props {
     placeholder?: string;
     onQuery: (query: string) => void;
@@ -29,7 +29,7 @@ export const CustomSearch = ({placeholder='Buscar',onQuery}:Props) => {
         }
     };
     return (
-        <div className='search-container'>
+        <div className={styles.searchContainer}>
             <input 
                 type='text' 
                 placeholder={placeholder} 

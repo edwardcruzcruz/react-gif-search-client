@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import styles from './CustomPreviousSeraches.module.scss';
 
 interface Props {
   searches: string[];
@@ -8,9 +9,9 @@ interface Props {
 
 export const CustomPreviousSearches: FC<Props> = ({searches, onLabelClicked}) => {
   return (
-    <div className='previous-searches'>
+    <div className={styles.previousSearches}>
       <h2>Búsquedas previas</h2>
-      <ul className='previous-searches-list'>
+      <ul className={styles.previousSearchesList}>
           {searches.map((item)=>(
             <li 
               key={item}

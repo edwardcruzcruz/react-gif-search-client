@@ -1,3 +1,4 @@
+import styles from './CustomHeader.module.scss';
 interface Props {
     title: string;
     description?: string;
@@ -5,7 +6,7 @@ interface Props {
 
 export const CustomHeader = ({title,description}: Props) => {
   return (
-    <div className='content-center'>
+    <div className={styles.contentCenter}>
         <h1>{title}</h1>
         {description && <p>{description}</p>}
     </div>

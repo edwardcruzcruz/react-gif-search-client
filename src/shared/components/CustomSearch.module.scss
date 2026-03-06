@@ -1,0 +1,33 @@
+@use '../../../styles/mixins' as *;
+@use '../../../styles/variables' as *;
+
+.searchContainer {
+    @include flex-row-center;
+    justify-content: center;
+    gap: $gap-base;
+}
+
+.searchContainer input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border: $border solid $neutral_300;
+    border-radius: $border-radius-sm;
+    font-size: $font-size-base;
+    color: $primary_700;
+}
+
+.searchContainer button {
+    padding: 10px;
+    border: $border solid $neutral_300;
+    border-radius: $border-radius-sm;
+    font-size: $font-size-base;
+    color: $primary_700;
+    background-color: $primary_900;
+    color: $primary_100;
+    cursor: pointer;
+    transition: $transition;
+    &:hover{
+        background-color: $primary_700;    
+    }
+}
