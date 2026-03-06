@@ -40,6 +40,8 @@ The project demonstrates clean architecture principles, custom hooks, API abstra
 
 - Vite
 
+- SCSS / SASS with CSS Modules (variables, mixins, responsive breakpoints)
+
 - Axios
 
 - Vitest
@@ -58,15 +60,19 @@ src/
  ├── gifs/
  │    ├── actions/            # Business logic actions (API calls abstraction)
  │    ├── api/                # Axios configuration and external API integration
- │    ├── components/         # Feature-specific components
+ │    ├── components/         # Feature-specific components with .module.scss
  │    ├── hooks/              # Custom React hooks (useGifs)
  │    ├── interfaces/         # TypeScript interfaces and types
  │
- ├── shared/components/       # Reusable UI components
+ ├── shared/components/       # Reusable UI components with SCSS modules
+ ├── styles/                  # SCSS partials (variables, mixins, typography)
+ │    ├── _variables.scss
+ │    ├── _mixins.scss
+ │    └── global.scss         # Global styles
  ├── mock-data/               # Mocked API responses
  ├── main.tsx                 # Application entry point
  ├── GifsApp.tsx              # Root component
- └── index.css                # Global styles
+ └── index.css                # Global styles(Replaced by SCSS)
 
 test/
  ├── gifs/                    # Unit tests for GIF domain
@@ -147,6 +153,8 @@ npm run coverage
 - ✅ Separation between API layer and UI components
 
 - ✅ Business logic encapsulated inside custom hooks
+
+- ✅ SCSS modules with variables, mixins, and breakpoints for maintainable styling
 
 - ✅ External API mocking for deterministic tests
 
